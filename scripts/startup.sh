@@ -17,5 +17,8 @@ echo "Render configuration using envsubst"
     < /etc/conf/config.json.tpl \
     > ./config.json
 
-echo "Start xray process"
-exec /usr/bin/xray -config ./config.json
+echo "Check config"
+/usr/bin/sing-box check -c ./config.json
+
+echo "Start sing-box process"
+exec /usr/bin/sing-box run -c ./config.json
