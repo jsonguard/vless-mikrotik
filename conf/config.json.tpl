@@ -1,101 +1,43 @@
 {
   "log": {
-    "loglevel": "${LOG_LEVEL}"
+    "level": "${LOG_LEVEL}"
   },
-   "inbounds": [
+  "inbounds": [
     {
-      "listen": "0.0.0.0",
-      "port": ${LISTEN_HTTP},
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "tag": "http"
-    },
-    {
-      "listen": "0.0.0.0",
-      "port": ${LISTEN_SOCKS},
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "enabled": true,
-        "routeOnly": false
-      },
-      "tag": "socks"
+      "type": "tun",
+      "inet4_address": "172.16.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "sniff": true,
+      "domain_strategy": "prefer_ipv4"
     }
   ],
   "outbounds": [
     {
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "${REMOTE_ADDRESS}",
-            "port": ${REMOTE_PORT},
-            "users": [
-              {
-                "encryption": "${USER_ENCRYPTION}",
-                "flow": "${USER_FLOW}",
-                "id": "${USER_ID}",
-                "level": 8,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "realitySettings": {
-          "allowInsecure": false,
-          "alpn": [
-            "h2"
-          ],
-          "fingerprint": "${STREAM_FINGERPRINT}",
-          "publicKey": "${STREAM_PUBLIC_KEY}",
-          "serverName": "${STREAM_SERVER_NAME}",
-          "shortId": "${STREAM_SHORT_ID}",
-          "show": false,
-          "spiderX": ""
+      "type": "vless",
+      "server": "${REMOTE_ADDRESS}",
+      "server_port": ${REMOTE_PORT},
+      "uuid": "${USER_ID}",
+      "flow": "${USER_FLOW}",
+      "tls": {
+        "enabled": true,
+        "server_name": "${STREAM_SERVER_NAME}",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "${STREAM_FINGERPRINT}"
         },
-        "security": "reality",
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
+        "reality": {
+          "enabled": true,
+          "public_key": "${STREAM_PUBLIC_KEY}",
+          "short_id": "${STREAM_SHORT_ID}"
         }
       },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
+      "multiplex": {
+        "enabled": false,
+        "protocol": "h2mux",
+        "max_streams": 32
       },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
+      "packet_encoding": "xudp"
     }
   ]
 }
