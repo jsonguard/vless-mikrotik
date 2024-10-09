@@ -1,6 +1,7 @@
 # vless-mikrotik
 
-LESS container for RouterOS
+VLESS container for RouterOS
+Use sing-bot in TUN mode
 
 Docker Hub: https://hub.docker.com/repository/docker/jsonguard/vless-mikrotik
 
@@ -19,12 +20,9 @@ Additional env variables:
 /container envs
 add name=vless key=LOG_LEVEL value=warn
 
-add name=vless key=LISTEN_HTTP value=8080
-add name=vless key=LISTEN_SOCKS value=8090
-
 add name=vless key=REMOTE_PORT value=443
 
-add name=vless key=USER_ENCRYPTION value=none
 add name=vless key=USER_FLOW value=xtls-rprx-vision
 add name=vless key=STREAM_FINGERPRINT value=chrome
+add name=vless key=TUN_INTERNAL_NETWORK value="172.16.255.1/24"
 ```
