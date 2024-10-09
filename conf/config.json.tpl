@@ -29,6 +29,7 @@
       "server_port": ${REMOTE_PORT},
       "uuid": "${USER_ID}",
       "flow": "${USER_FLOW}",
+      "network": "tcp",
       "tls": {
         "enabled": true,
         "server_name": "${STREAM_SERVER_NAME}",
