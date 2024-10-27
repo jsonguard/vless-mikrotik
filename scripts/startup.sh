@@ -13,7 +13,7 @@ source .env
 rm -f .env
 
 echo "Render configuration using envsubst"
-rf -f ./config.json
+rm -f ./config.json
 /usr/bin/envsubst \
     < /etc/conf/config.json.tpl \
     > ./config.json
