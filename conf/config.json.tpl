@@ -7,13 +7,15 @@
       "type": "tun",
       "tag": "tun-in",
       "interface_name": "tun0",
-      "inet4_address": ["${TUN_INTERNAL_NETWORK}"],
-      "mtu": 1500,
+      "address": ["${TUN_INTERNAL_NETWORK}"],
+      "mtu": 9000,
       "auto_route": true,
       "strict_route": false,
-      "stack": "system",
+      "stack": "mixed",
+      "gso": true,
       "sniff": false,
-      "inet4_route_exclude_address":
+      "udp_timeout": 5,
+      "route_exclude_address":
         [ 
           "192.168.0.0/16",
           "172.16.0.0/12"
