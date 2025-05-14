@@ -10,7 +10,7 @@
       "address": ["${TUN_INTERNAL_NETWORK}"],
       "mtu": 9000,
       "auto_route": true,
-      "auto_redirect": false,
+      "auto_redirect": true,
       "strict_route": true,
       "stack": "mixed",
       "gso": true,
