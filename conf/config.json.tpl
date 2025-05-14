@@ -13,7 +13,6 @@
       "auto_redirect": true,
       "strict_route": true,
       "stack": "mixed",
-      "gso": true,
       "sniff": false,
       "udp_timeout": 5,
       "route_exclude_address":
