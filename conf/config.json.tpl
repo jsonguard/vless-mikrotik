@@ -10,11 +10,11 @@
       "address": ["${TUN_INTERNAL_NETWORK}"],
       "mtu": 9000,
       "auto_route": true,
-      "auto_redirect": true,
+      "auto_redirect": false,
       "strict_route": true,
       "stack": "mixed",
       "sniff": false,
-      "udp_timeout": 5,
+      "udp_timeout": 2,
       "route_exclude_address":
         [ 
           "192.168.0.0/16",
