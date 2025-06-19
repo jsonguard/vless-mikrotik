@@ -49,7 +49,7 @@ Sing-box: https://github.com/SagerNet/sing-box
     ```
 1. Установим зеркало для скачивания образов и временный каталог для извлечения
     ```sh
-    /container/config/set registry-url=https://registry-1.docker.io tmpdir=/usb1-part1/containers/tmp ram-high=0
+    /container/config/set registry-url=https://registry-1.docker.io tmpdir=/usb1-part1/containers/tmp layer-dir=/usb1-part1/containers/layers ram-high=0
     ```
     Установка `ram-high` крайне важна, без этого контейнеры не будут работать после перезагрукзи устройства -- особенность работы контейнеров в RouterOS
 1. Зададим конфигурацию для работы контейнера через переменные окружения
