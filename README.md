@@ -45,7 +45,7 @@ Sing-box: https://github.com/SagerNet/sing-box
     ```
 1. Настроим NAT для исходящего из контейнерной сети трафика
     ```sh
-    /ip/firewall/nat/add chain=srcnat action=masquerade src-address=172.17.0.0/24
+    /ip/firewall/nat/add chain=srcnat action=masquerade src-address=172.17.0.0/24 ut-interface-list=WAN
     ```
 1. Установим зеркало для скачивания образов и временный каталог для извлечения
     ```sh
