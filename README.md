@@ -61,10 +61,26 @@ Sing-box: https://github.com/SagerNet/sing-box
     add name=vless key=STREAM_SERVER_NAME value=yahoo.com
     add name=vless key=STREAM_SHORT_ID value=XXXX
     ```
-1. Запустим контейнер
+1. Добавим контейнер
     ```sh
     /container/add remote-image="jsonguard/vless-mikrotik:1.11.13-singbox" envlist=vless interface=vless logging=yes root-dir=usb1-part1/containers/vless-mikrotik start-on-boot=yes
     ```
+1. Дождемся, пока образ скачается и контейнер будет готов к запуску. Проверим логи
+    ```sh
+    /log print
+    ```
+    Здесь можно следуить за ходом загрузки и распаковки образа. По окончанию, контейнер должен перейти в статус `stopped`. Проверим в списке контейнеров
+    ```sh
+    /container/print
+    ```
+1. Запустим контейнер
+    ```sh
+    /container/start 0
+    ```
+    За ходом запуска можно следить в логах
+1. Используя маршруты, направим трафик в туннель
+    ```sh
+    /ip/route/add dst-address=X.X.X.X gateway=172.17.0.2 check-gateway=ping
 
 ## Переменные окружения для конфигурации
 
