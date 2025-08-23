@@ -63,7 +63,7 @@ Sing-box: https://github.com/SagerNet/sing-box
     ```
 1. Добавим контейнер
     ```sh
-    /container/add remote-image="jsonguard/vless-mikrotik:1.11.14-singbox" envlist=vless interface=vless logging=yes root-dir=usb1-part1/containers/vless-mikrotik start-on-boot=yes
+    /container/add remote-image="jsonguard/vless-mikrotik:1.12.3-singbox" envlist=vless interface=vless logging=yes root-dir=usb1-part1/containers/vless-mikrotik start-on-boot=yes
     ```
 1. Дождемся, пока образ скачается и контейнер будет готов к запуску. Проверим логи
     ```sh
