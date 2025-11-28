@@ -8,7 +8,7 @@
       "tag": "tun-in",
       "interface_name": "tun0",
       "address": ["${TUN_INTERNAL_NETWORK}"],
-      "mtu": 9000,
+      "mtu": 1500,
       "auto_route": true,
       "auto_redirect": false,
       "strict_route": true,
