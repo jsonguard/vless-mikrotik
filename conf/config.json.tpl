@@ -12,9 +12,9 @@
       "auto_route": true,
       "auto_redirect": false,
       "strict_route": true,
-      "stack": "mixed",
+      "stack": "system",
       "sniff": false,
-      "udp_timeout": 2,
+      "udp_timeout": "60s",
       "route_exclude_address":
         [ 
           "192.168.0.0/16",
