@@ -20,7 +20,6 @@
           "192.168.0.0/16",
           "172.16.0.0/12"
         ],
-      "domain_strategy": "ipv4_only"
     }
   ],
   "outbounds": [

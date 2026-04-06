@@ -16,7 +16,7 @@ ARG SING_BOX_PATH
 # Download and unpack sing-box distribution and place it to $SING_BOX_PATH
 RUN \
     mkdir -p ./content &&\
-    wget "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-${SING_BOX_ARCH}.tar.gz" -O ./archive.tar.gz &&\
+    wget "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-${SING_BOX_ARCH}-musl.tar.gz" -O ./archive.tar.gz &&\
     tar -xzf archive.tar.gz -C ./content &&\
     find ./content -name sing-box -type f -exec mv '{}' ${SING_BOX_PATH} \;
 
