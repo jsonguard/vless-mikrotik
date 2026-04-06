@@ -1,5 +1,5 @@
 # Public ARGs
-ARG ALPINE_VERSION=3.20
+ARG ALPINE_VERSION=3.23
 ARG SING_BOX_VERSION=1.0.0
 
 # ARGs for intenral usage
