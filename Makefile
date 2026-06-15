@@ -1,7 +1,7 @@
 VERSION=1.13.12
 
 DOCKER_IMAGE_TAG=jsonguard/vless-mikrotik:${VERSION}-singbox
-DOCKER_IMAGE_PLATFORM=arm,arm64
+DOCKER_IMAGE_PLATFORM=arm,arm64,x86_64
 DOCKER_BUILD_CONTEXT=.
 
 version:
