@@ -59,6 +59,9 @@
         "inbound": [
           "tun-in"
         ],
+        "tls_fragment": ${TLS_FRAGMENT_ENAABLED},
+        "tls_record_fragment": ${TLS_RECORD_FRAGMENT_ENAABLED},
+        "tls_fragment_fallback_delay": "${TLS_FRAGMENT_FALLBACK_DELAY}",
         "outbound": "vless-out"
       }
     ]
