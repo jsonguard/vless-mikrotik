@@ -14,7 +14,7 @@
 
 Требования:
 - Уже настроенный сервер с серверной частью VLESS, например sing-box или xray-core
-- Mikrotik с 64-битным процессором ARN
+- Mikrotik с CPU на архитектуре arm / arm64 / x86_64
 - Вставленная, размеченная, отформатированная и смонтированная флешка для хранения данных контейнеров
 - Установленный пакет `container` и соответствующие разрешения в системе для работы контейнеров
     ```sh
@@ -105,3 +105,5 @@ add name=vless key=USER_FLOW value=xtls-rprx-vision
 add name=vless key=STREAM_FINGERPRINT value=chrome
 add name=vless key=TUN_INTERNAL_NETWORK value="172.16.255.1/24"
 ```
+
+Подробнее см. в [дефолтных значениях переменных](./conf/defaults.env)
