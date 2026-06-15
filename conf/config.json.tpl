@@ -44,9 +44,10 @@
         }
       },
       "multiplex": {
-        "enabled": false,
-        "protocol": "h2mux",
-        "max_streams": 128
+        "enabled": ${MULTIPLEX_ENABLED},
+        "protocol": "${MULTIPLEX_PROTOCOL}",
+        "max_streams": ${MULTIPLEX_MAX_STREAMS},
+        "padding": ${MULTIPLEX_PADDING_ENABLED}
       },
       "packet_encoding": "xudp"
     }
